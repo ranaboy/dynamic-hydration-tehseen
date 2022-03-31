@@ -1,0 +1,349 @@
+.select__main {
+    position: relative;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #666666;
+    width: 100%;
+}
+
+.select__main .select__single--selected {
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+    height: 52px;
+    padding: 16px 8px 14px 8px;
+    border: 1px solid #dcdee2;
+    border-radius: 0px;
+    background-color: #FFF;
+    outline: 0;
+    box-sizing: border-box;
+    transition: background-color .3s;
+}
+
+.select__main .select__single--selected.select__disabled {
+    background-color: #dcdee2;
+    cursor: not-allowed;
+}
+
+.select__main .select__single--selected.select__open {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.select__main .select__single--selected .placeholder {
+    display: flex;
+    align-items: center;
+    flex: 1 1 100%;
+    text-align: left;
+    width: calc(100% - 30px);
+    line-height: 1em;
+}
+
+.select__main .select__single--selected .placeholder * {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.select__main .select__single--selected .placeholder .select__disabled {
+    cursor: pointer;
+    color: #dcdee2;
+}
+
+.select__main .select__single--selected .select__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 1 auto;
+    margin: -1px 4px 0 5px;
+}
+
+.select__main .select__single--selected .select__arrow span {
+    border: solid #666666;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transition: transform .2s, margin .2s;
+}
+
+.select__main .select__single--selected .select__arrow span.arrow-up {
+    transform: rotate(-135deg);
+    margin: 3px 0 0 0;
+}
+
+.select__main .select__single--selected .select__arrow span.arrow-down {
+    transform: rotate(45deg);
+    margin: -3px 0 0 0;
+}
+
+.select__main .select__multi--selected {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    min-height: 52px;
+    width: 100%;
+    padding: 0 0 0 3px;
+    border: 1px solid #dcdee2;
+    border-radius: 0px;
+    background-color: #FFF;
+    outline: 0;
+    box-sizing: border-box;
+    transition: background-color .3s;
+}
+
+.select__main .select__multi--selected.select__disabled {
+    background-color: #dcdee2;
+    cursor: not-allowed;
+}
+
+.select__main .select__multi--selected.select__disabled .select__values .select__disabled {
+    color: #666666;
+}
+
+.select__main .select__multi--selected.select__disabled .select__value--delete {
+    cursor: not-allowed;
+}
+
+.select__main .select__multi--selected.select__open {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.select__main .select__multi--selected.select__values {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex: 1 1 100%;
+    width: calc(100% - 30px);
+}
+
+.select__main .select__multi--selected.select__values .select__disabled {
+    display: flex;
+    padding: 4px 5px;
+    margin: 2px 0px;
+    line-height: 1em;
+    align-items: center;
+    width: 100%;
+    color: #dcdee2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@-webkit-keyframes scaleIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes scaleOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes scaleOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.select__main .select__multi--selected.select__values .select__value {
+    display: flex;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    align-items: center;
+    font-size: 12px;
+    padding: 3px 5px;
+    margin: 3px 5px 3px 0px;
+    color: #FFF;
+    background-color: #5897fb;
+    border-radius: 0px;
+    -webkit-animation-name: scaleIn;
+    animation-name: scaleIn;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.select__main .select__multi--selected.select__values .select__value.select__out {
+    -webkit-animation-name: scaleOut;
+    animation-name: scaleOut;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+}
+
+.select__main .select__multi--selected.select__values .select__value--delete {
+    margin: 0 0 0 5px;
+    cursor: pointer;
+}
+
+.select__main .select__multi--selected.select .select__add {
+    display: flex;
+    flex: 0 1 3px;
+    margin: 9px 12px 0 5px;
+}
+
+.select__main .select__multi--selected.select .select__add .select__plus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #666666;
+    position: relative;
+    height: 10px;
+    width: 2px;
+    transition: transform .2s;
+}
+
+.select__main .select__multi--selected.select .select__add .select__plus:after {
+    background: #666666;
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 10px;
+    left: -4px;
+    top: 4px;
+}
+
+.select__main .select__multi--selected.select .select__add .select__plus.select__cross {
+    transform: rotate(45deg);
+}
+
+.select__main .select__content {
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    border: solid 1px #dcdee2;
+    border-top: 0;
+    z-index: 1010;
+    background-color: #FFF;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+    transform-origin: center top;
+    transition: transform .2s, opacity .2s;
+    opacity: 0;
+    transform: scaleY(0);
+}
+
+.select__main .select__content.select__open {
+    display: block;
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.select__main .select__content .select__search {
+    padding: 6px 10px 6px 10px;
+}
+
+.select__main .select__content .select__search input {
+    display: block;
+    font-size: inherit;
+    width: 100%;
+    height: 52px;
+    padding: 16px 8px 14px 8px;
+    border: 1px solid #dcdee2;
+    border-radius: 0px;
+    background-color: #FFF;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+.select__main .select__content .select__search input::-moz-placeholder {
+    color: #b3b3b3;
+}
+
+.select__main .select__content .select__search input:-ms-input-placeholder {
+    color: #b3b3b3;
+}
+
+.select__main .select__content .select__search input::placeholder {
+    color: #b3b3b3;
+}
+
+.select__main .select__content .select__search input:focus {
+    box-shadow: 0 0 5px #5897fb;
+}
+
+.select__main .select__content .select__list {
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.select__main .select__content .select__list .select__optgroup--label {
+    padding: 6px 10px 6px 10px;
+    font-weight: bold;
+}
+
+.select__main .select__content .select__list .select__optgroup .select__option {
+    padding: 6px 6px 6px 25px;
+}
+
+.select__main .select__content .select__list .select__option {
+    padding: 16px 8px 14px 8px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.select__main .select__content .select__list .select__option * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.select__main .select__content .select__list .select__option:hover,
+.select__main .select__content .select__list .select__option.select__highlighted {
+    color: #FFF;
+    background-color: #5897fb;
+}
+
+.select__main .select__content .select__list .select__option.select__disabled {
+    cursor: default;
+    color: #dcdee2;
+    background-color: #FFF;
+}
+
+.select__main .select__content .select__list .select__option.select__hide {
+    display: none;
+}

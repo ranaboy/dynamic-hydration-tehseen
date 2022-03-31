@@ -1,0 +1,52 @@
+/* Custome Style  */
+
+.ag-cell-value.ag-cell.ag-cell-not-inline-editing.ag-cell-normal-height button {
+    background: transparent;
+    border: none;
+    padding-left: 0px;
+}
+
+@media(min-width:1200px) {
+    .app-footer.fixed-bottom.custome-footer-width {
+        left: 251px !important;
+    }
+}
+
+
+/* Animation Left to Right Blocks  */
+
+@keyframes slideInFromLeft {
+    100% {
+        transform: translateX(0);
+    }
+    0% {
+        transform: translateX(100%);
+    }
+}
+
+.animate-right-to-left {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.animate-left-to-right {
+    animation: 1s ease-out 0s 1 slideInFromRight;
+}
+
+.app-content {
+    margin-bottom: 60px !important;
+}
+
+.cust-font-small {
+    font-size: 11px;
+    width: 100%;
+    margin-bottom: 5px;
+}
